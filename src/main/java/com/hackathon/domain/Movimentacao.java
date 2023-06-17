@@ -1,13 +1,19 @@
 package com.hackathon.domain;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
 public class Movimentacao {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private LocalDateTime dataHora;
     private String descricao;
     private Double valor;
+
+    @Enumerated(EnumType.STRING)
     private MovimentacaoTipo movimentacaoTipo;
 
     public Integer getId() {

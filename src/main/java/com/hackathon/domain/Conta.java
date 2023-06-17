@@ -1,5 +1,8 @@
 package com.hackathon.domain;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Conta {
 
     private Long numero;

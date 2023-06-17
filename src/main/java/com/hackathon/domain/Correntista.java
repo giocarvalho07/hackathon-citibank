@@ -1,10 +1,19 @@
 package com.hackathon.domain;
 
+import org.springframework.boot.autoconfigure.web.WebProperties;
+
+import javax.persistence.*;
+
+@Entity
 public class Correntista {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String cpf;
     private String nome;
+
+    @Embedded
     private Conta conta;
 
     public Conta getConta() {
